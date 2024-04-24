@@ -2,10 +2,10 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 export default function CreateNewNotes({ createNewNote }) {
-    const [day, setDay] = useState(""); // monday
-    const [title, setTitle] = useState(""); // sce
-    const [description, setDescription] = useState(""); // scdfde
-
+    const [day, setDay] = useState(""); 
+    const [title, setTitle] = useState(""); 
+    const [description, setDescription] = useState(""); 
+    
     const handleDayChange = (e) => {
         const value = e.target.value;
         setDay(value);

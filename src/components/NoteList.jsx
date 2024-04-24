@@ -5,8 +5,6 @@ export default function NoteList({
     notes,
     titleName,
     deleteNote,
-    // archiveNote,
-    // unarchiveNote,
 }) {
     return(
         <div className="flex flex-col gap-4 px-5 my-5">
@@ -20,8 +18,6 @@ export default function NoteList({
                             key={note.id} 
                             note={note} 
                             deleteNote={deleteNote} 
-                            // archiveNote={archiveNote} 
-                            // unarchiveNote={unarchiveNote} 
                         />
                     ))
                 )}
@@ -34,6 +30,4 @@ NoteList.PropTypes = {
     notes: PropTypes.arrayOf(PropTypes.object),
     titleName: PropTypes.string,
     deleteNote: PropTypes.func,
-    // archiveNote: PropTypes.func,
-    // unarchiveNote: PropTypes.func,
 }

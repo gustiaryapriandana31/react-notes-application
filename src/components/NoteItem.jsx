@@ -1,12 +1,9 @@
 import PropTypes from "prop-types";
-// import { BiArchiveIn, BiArchiveOut } from "react-icons/bi";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 export default function NoteItem({
     note, 
     deleteNote,     
-    // archiveNote, 
-    // unarchiveNote,
 }) {
     const handleDeleteNote = (id) => {
         deleteNote(id);
@@ -18,17 +15,6 @@ export default function NoteItem({
             <p>{note.description}</p>
             <small className="float-right text-sm text-sky-400">{note.day}</small>
             <div className="flex justify-between gap-2">
-                {/* {note.isArchive ? (
-                    <BiArchiveOut 
-                        className="text-xl text-yellow-600 cursor-pointer"
-                        onClick={() => unarchiveNote(note.id)} 
-                    />
-                ) : (
-                    <BiArchiveIn
-                        className="text-xl text-yellow-600 cursor-pointer"
-                        onClick={() => archiveNote(note.id)}
-                    />
-                )} */}
                 <FaRegTrashCan
                     className="text-xl text-red-600 cursor-pointer"
                     onClick={() => handleDeleteNote(note.id)}
@@ -41,6 +27,4 @@ export default function NoteItem({
 NoteItem.PropTypes = {
     note: PropTypes.object,
     deleteNote: PropTypes.func,
-    // archiveNote: PropTypes.func,
-    // unarchiveNote: PropTypes.func,
 };

@@ -15,7 +15,6 @@ export default function App() {
         day: day,
         title: title,
         description: description,
-        // isArchive: false,
       },
     ]);
   };
@@ -24,30 +23,6 @@ export default function App() {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
-
-  // const archiveNote = (id) => {
-  //   const updatedNote = notes.filter((note) => {
-  //     if (note.id === id) {
-  //       note.isArchive = true;
-  //     }
-  //     return note;
-  //   });
-  //   setNotes(updatedNote);
-  // };
-
-  // const unarchiveNote = (id) => {
-  //   const updatedNote = notes.filter((note) => {
-  //     if (note.id === id) {
-  //       note.isArchive = false;
-  //     }
-  //     return note;
-  //   });
-  //   setNotes(updatedNote);
-  // };
-
-  // const activeNotes = notes.filter((note) => note.isArchive === false);
-
-  // const archivedNotes = notes.filter((note) => note.isArchive === true);
 
   return (
     <div className="h-full min-h-screen pb-5 bg-yellow-100">
@@ -58,15 +33,7 @@ export default function App() {
         notes={notes}
         titleName="Catatan Saya Sekarang"
         deleteNote={deleteNote}
-        // archiveNote={archiveNote}
       />
-      <hr className="border border-t border-slate-900" />
-      {/* <NoteList
-        notes={notes}
-        titleName={"Catatan yang Diarsip"}
-        deleteNote={deleteNote}
-        unarchiveNote={unarchiveNote}
-      /> */}
     </div>
   );
 }
