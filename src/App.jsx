@@ -1,11 +1,10 @@
 import { useState } from "react";
 import NavigationBar from "./components/NavigationBar";
 import NoteList from "./components/NoteList";
-import { initialNotes } from "./utils/notes";
 import CreateNewNotes from "./components/CreateNewNotes";
 
 export default function App() {
-  const [notes, setNotes] = useState(initialNotes);
+  const [notes, setNotes] = useState("");
   const [editNoteData, setEditNoteData] = useState("");
 
   const createNote = (day, title, description) => {
