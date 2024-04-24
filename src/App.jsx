@@ -19,7 +19,7 @@ export default function App() {
     ]);
   };
 
-  const deleteNote = (id) => {
+  const handleDeleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
@@ -32,7 +32,7 @@ export default function App() {
       <NoteList
         notes={notes}
         titleName="Catatan Saya Sekarang"
-        deleteNote={deleteNote}
+        deleteNote={handleDeleteNote}
       />
     </div>
   );
