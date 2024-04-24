@@ -12,7 +12,7 @@ export default function NoteList({
             <h2 className="font-bold text-lg text-orange-500">{titleName}</h2>
             <div className="flex flex-wrap gap-4">
                 {notes.length === 0 ? (
-                    <p>Anda Belum Membuat Catatan</p>
+                    <p>You have not created a note yet</p>
                 ) : (
                     notes.map((note) => (
                         <NoteItem 

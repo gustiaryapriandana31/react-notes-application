@@ -49,7 +49,7 @@ export default function App() {
       />
       <NoteList
         notes={notes}
-        titleName="Catatan Saya Sekarang"
+        titleName="My Current Notes"
         editNote={handleEditNote}
         deleteNote={handleDeleteNote}
       />
