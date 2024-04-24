@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-export default function CreateNewNotes({ createNewNote }) {
+export default function CreateNewNotes({ createNewNote, editNote, updateNote }) {
     const [day, setDay] = useState(""); 
     const [title, setTitle] = useState(""); 
     const [description, setDescription] = useState(""); 
-    
+
     const handleDayChange = (e) => {
         const value = e.target.value;
         setDay(value);
@@ -23,12 +23,25 @@ export default function CreateNewNotes({ createNewNote }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createNewNote(day, title, description);
+        if (editNote) {
+            updateNote(editNote.id, day, title, description);
+        } else {
+            createNewNote(day, title, description);
+        }        
+        
         // Reset form after submitted
         setDay("");
         setTitle("");
         setDescription("");
     }
+
+    useEffect(() => {
+        if (editNote) {
+          setDay(editNote.day);
+          setTitle(editNote.title);
+          setDescription(editNote.description);
+        }
+    }, [editNote]);
 
     return(
         <form className="flex flex-col items-center justify-center gap-3 mt-4"

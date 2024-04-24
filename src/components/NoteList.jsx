@@ -4,6 +4,7 @@ import NoteItem from "./NoteItem";
 export default function NoteList({
     notes,
     titleName,
+    editNote,
     deleteNote,
 }) {
     return(
@@ -11,12 +12,13 @@ export default function NoteList({
             <h2 className="font-bold text-lg text-orange-500">{titleName}</h2>
             <div className="flex flex-wrap gap-4">
                 {notes.length === 0 ? (
-                    <p>Belum Ada Catatan</p>
+                    <p>Anda Belum Membuat Catatan</p>
                 ) : (
                     notes.map((note) => (
                         <NoteItem 
                             key={note.id} 
                             note={note} 
+                            editNote={editNote}
                             deleteNote={deleteNote} 
                         />
                     ))
